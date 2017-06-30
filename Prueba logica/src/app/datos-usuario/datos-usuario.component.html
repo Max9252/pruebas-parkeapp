@@ -1,0 +1,46 @@
+<div class="container">
+
+  <div class="col-xs-12" align="left">
+      <h2>Datos del usuario</h2>
+      <br>
+    <form class="form-horizontal" action="/action_page.php" *ngIf="usuario">
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="name">Nombre:</label>
+        <div class="col-sm-6" >
+          <input  [(ngModel)]="usuario.name" type="text" class="form-control" id="id" name="id">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="email">Email:</label>
+        <div class="col-sm-6">
+          <input [(ngModel)]="usuario.email" type="email" class="form-control" id="email" name="email">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="edad">Edad:</label>
+        <div class="col-sm-6">
+          <input  [(ngModel)]="usuario.age" type="text" class="form-control" id="edad" name="edad">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="company">Compañia:</label>
+        <div class="col-sm-6">
+          <input  [(ngModel)]="usuario.company" type="text" class="form-control" id="company" name="company">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="control-label col-sm-2" for="phoneNumber">Numero de telefono:</label>
+        <div class="col-sm-6">
+          <input [(ngModel)]="usuario.phoneNumber" type="text" class="form-control" id="phoneNumber" name="phoneNumber">
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-6">
+          <button  class="btn btn-default" (click)="cargarUsuarios()">Aceptar</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+</div>
+<router-outlet></router-outlet>
