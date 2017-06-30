@@ -1,0 +1,101 @@
+md-card {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: absolute;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+}
+
+b {
+  font-size: 16px;
+}
+
+md-card-content {
+  margin-top: 35px;
+}
+
+.center-button {
+  display: block;
+  margin: 0 auto;
+}
+
+button {
+  background-color: #03a2f3;
+  margin-right: 10px;
+}
+
+.button-group {
+  display: table;
+  margin: 0 auto;
+}
+
+#slideEntrada {
+  background-image: url("../assets/city.jpg");
+background-repeat: no-repeat;
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+background-position: center;
+opacity: 0.9;
+}
+
+#slidePrivado {
+  background-color: #039be5;
+}
+
+#slideFreemium {
+  background-color: #455a64;
+}
+
+#slidePremium {
+  background-color: #212121;
+}
+
+
+#slideFiltro {
+  background-color: #00796b;
+}
+
+#slideChoose{
+  background-color: #546e7a;
+
+}
+
+img.center {
+  display: block;
+  margin: 0 auto;
+  margin-top: 2vh;
+}
+
+md-card-content {
+  margin-top: 5vh;
+}
+
+img.logo {
+  height: 56px;
+  width: 56px;
+}
+
+img.logo-completo {
+  margin-top: 11vh;
+}
+
+.check-list{
+  margin-top: 5vh;
+}
+button.md-mini-fab{
+    margin-top: 20px;
+}
+.inner-carousel{
+  text-align: center;
+  margin-top: 3vh;
+}
+
+.my-icon-button {
+  min-width: 0;
+  min-height: 0;
+  line-height: normal;
+}

@@ -1,0 +1,138 @@
+<div flex layout="row" *ngIf="slideEntrada">
+  <md-card flex id="slideEntrada">
+    <md-card-header>
+    </md-card-header>
+    <img class="center logo-completo" src="../assets/logo-pag-web.png" style="margin-top:16vh;">
+    <md-card-content>
+      <p align="center"><b>Bienvenido a tu aplicación ParkeApp</b></p>
+      <p align="center">Donde podrás encontrar el parqueadero ideal para ti según tu necesidad</p>
+      <button md-raised-button (click)="slideEntrada = false; slidePrivado=true;" class="center-button" style="background-color:#263238;">EMPECEMOS</button>
+    </md-card-content>
+  </md-card>
+</div>
+
+<div flex layout="row" *ngIf="slidePrivado">
+  <md-card flex id="slidePrivado">
+    <md-card-header>
+      <img md-card-avatar class="logo" src="../assets/logo.ico">
+    </md-card-header>
+    <img class="center" src="../assets/privados.png">
+    <div class="col-xs-12 inner-carousel">
+      <i class="fa fa-circle" aria-hidden="true"></i>
+      <i class="fa fa-circle-thin" aria-hidden="true"></i>
+      <i class="fa fa-circle-thin" aria-hidden="true"></i>
+      <i class="fa fa-circle-thin" aria-hidden="true"></i>
+    </div>
+    <md-card-content>
+      <p align="center"><b>Parqueaderos PRIVADOS</b></p>
+      <p align="center">Este servicio te ofrece realizar reservas mensuales, geolocalización del parqueadero y varios métodos de pago</p>
+      <div class="col-md-12 button-group">
+        <button md-raised-button (click)="slidePrivado=false;slideEntrada = true;" style="background-color:#63ccff;">VOLVER</button>
+        <button md-raised-button (click)="slidePrivado=false;slideFreemium = true;" style="background-color:#63ccff;">CONTINUAR</button>
+      </div>
+
+    </md-card-content>
+  </md-card>
+</div>
+
+<div flex layout="row" *ngIf="slideFreemium">
+  <md-card flex id="slideFreemium">
+    <md-card-header>
+      <img class="logo" md-card-avatar src="../assets/logo.ico">
+    </md-card-header>
+    <img class="center" src="../assets/freemium.png">
+    <div class="col-xs-12 inner-carousel">
+      <i class="fa fa-circle-thin" aria-hidden="true"></i>
+      <i class="fa fa-circle" aria-hidden="true"></i>
+      <i class="fa fa-circle-thin" aria-hidden="true"></i>
+      <i class="fa fa-circle-thin" aria-hidden="true"></i>
+    </div>
+    <md-card-content>
+      <p align="center"><b>Parqueaderos públicos FREEMIUM</b></p>
+      <p align="center">Este servicio ofrece la ubicación del parqueadero y no tiene ningun costo</p>
+      <div class="col-md-12 button-group">
+        <button md-raised-button (click)="slideFreemium=false;slidePrivado = true;" style="background-color:#718792;">VOLVER</button>
+        <button md-raised-button (click)="slideFreemium=false;slidePremium = true;" style="background-color:#718792;">CONTINUAR</button>
+      </div>
+
+    </md-card-content>
+  </md-card>
+</div>
+
+<div flex layout="row" *ngIf="slidePremium">
+  <md-card flex id="slidePremium">
+    <md-card-header>
+      <img class="logo" md-card-avatar src="../assets/logo.ico">
+    </md-card-header>
+    <img class="center" src="../assets/premium.png">
+    <div class="col-xs-12 inner-carousel">
+      <i class="fa fa-circle-thin" aria-hidden="true"></i>
+      <i class="fa fa-circle-thin" aria-hidden="true"></i>
+      <i class="fa fa-circle" aria-hidden="true"></i>
+      <i class="fa fa-circle-thin" aria-hidden="true"></i>
+    </div>
+    <md-card-content>
+      <p align="center"><b>Parqueaderos públicos PREMIUM</b></p>
+      <p align="center">Este servicio te ofrece reservas por horas, disponibilidad en tiempo real, geolocalización del parqueadero y pago con tarjeta de crédito para tu mayor comodidad</p>
+      <div class="col-md-12 button-group">
+        <button md-raised-button (click)="slidePremium=false;slideFreemium = true;" style="background-color:#484848;">VOLVER</button>
+        <button md-raised-button (click)="slidePremium=false;slideFiltro = true;" style="background-color:#484848;">CONTINUAR</button>
+      </div>
+
+    </md-card-content>
+  </md-card>
+</div>
+
+<div flex layout="row" *ngIf="slideFiltro">
+  <md-card flex id="slideFiltro">
+    <md-card-header>
+      <img class="logo" md-card-avatar src="../assets/logo.ico">
+    </md-card-header>
+    <img class="center" src="../assets/filtro.png">
+    <div class="col-xs-12 inner-carousel">
+      <i class="fa fa-circle-thin" aria-hidden="true"></i>
+      <i class="fa fa-circle-thin" aria-hidden="true"></i>
+      <i class="fa fa-circle-thin" aria-hidden="true"></i>
+      <i class="fa fa-circle" aria-hidden="true"></i>
+    </div>
+    <md-card-content>
+      <p align="center"><b>Lo mejor de todo es que...</b></p>
+      <p align="center">¡Podras filtrar los parqueaderos disponibles según el servicio que mejor se ajuste a tus necesidades!</p>
+      <div class="col-md-12 button-group">
+        <button md-raised-button (click)="slideFiltro=false;slidePremium = true;" style="background-color:#48a999;">VOLVER</button>
+        <button md-raised-button (click)="slideFiltro=false;slideChoose = true;" style="background-color:#48a999;">CONTINUAR</button>
+      </div>
+    </md-card-content>
+  </md-card>
+</div>
+
+<div flex layout="row" *ngIf="slideChoose">
+  <md-card flex id="slideChoose">
+    <md-card-header>
+      <img class="logo" md-card-avatar src="../assets/logo.ico">
+    </md-card-header>
+    <md-card-content>
+      <h3 align="center">Ya que conoces nuestros servicios</h3>
+      <h4 align="center">¿Con cual deseas empezar?</h4>
+      <div class="col-md-12 check-list"  style="margin-top:8vh;">
+        <button md-mini-fab class="md-icon my-icon-button" style="background-color:#484848;" (click)="navigate()">
+          <img src="../assets/marcador_publicos_premium.ico" >
+        </button> Parqueaderos PREMIUM
+      </div>
+      <div class="col-md-12 check-list">
+        <button md-mini-fab class="md-icon my-icon-button" style="background-color:#718792;" (click)="navigate()">
+          <img src="../assets/marcador_publicos_freemium.ico">
+        </button> Parqueaderos FREEMIUM
+      </div>
+      <div class="col-md-12 check-list">
+        <button md-mini-fab class="md-icon my-icon-button" style="background-color:#63ccff;" (click)="navigate()">
+          <img src="../assets/marcador_privados.ico" >
+        </button> Parqueaderos PRIVADOS
+      </div>
+
+      <div class="col-md-12 button-group" style="margin-top:10vh;">
+        <button md-raised-button (click)="slideChoose=false;slideFiltro = true;" style="background-color:#819ca9;">VOLVER</button>
+      </div>
+    </md-card-content>
+  </md-card>
+</div>

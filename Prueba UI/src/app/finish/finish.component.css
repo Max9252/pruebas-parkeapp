@@ -1,0 +1,25 @@
+#finish {
+  background-image: url("../assets/city.jpg");
+background-repeat: no-repeat;
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+background-position: center;
+opacity: 0.9;
+}
+md-card {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: absolute;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+}
+
+img.center {
+  display: block;
+  margin: 0 auto;
+  margin-top: 2vh;
+}

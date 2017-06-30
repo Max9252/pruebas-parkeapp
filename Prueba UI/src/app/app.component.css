@@ -1,0 +1,24 @@
+md-card {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  position: absolute;
+  background-color: #41a9cc;
+  color: white;
+}
+
+md-card-content {
+  margin-top: 35px;
+}
+
+button {
+  background-color: #03a2f3;
+  margin-right: 10px;
+}
+
+.button-group{
+  display: table;
+  margin: 0 auto;
+
+}
