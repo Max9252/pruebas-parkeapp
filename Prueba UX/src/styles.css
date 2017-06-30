@@ -1,0 +1,21 @@
+/* You can add global styles to this file, and also import other style files */
+img{
+  width: 35% !important;
+}
+input[type="file"]{
+  display: none;
+}
+
+.button-group {
+  display: table;
+  margin: 0 auto;
+}
+
+.center-button {
+  display: block;
+  margin: 0 auto;
+}
+
+.button-group .btn {
+  margin-left: 10px;
+}

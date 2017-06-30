@@ -1,0 +1,101 @@
+<div class="container">
+  <h2>Reserva un parqueadero</h2>
+  <br>
+  <form >
+    <section *ngIf="pasoUno">
+      <label>Paso 1 de 4</label>
+      <h3>Datos del vehículo</h3>
+      <div class="form-group">
+        <select class="form-control" id="sel1">
+          <option selected disabled>Tipo de vehículo</option>
+    <option>Automóvil</option>
+    <option>Motocicleta</option>
+    <option>Bicicleta</option>
+  </select>
+      </div>
+      <div class="form-group">
+        <input class="form-control" type="text" placeholder="Placa del vehículo" >
+      </div>
+
+      <div class="form-group">
+        <select class="form-control" id="sel1">
+          <option selected disabled>Marca del vehículo</option>
+    <option>Suzuki</option>
+    <option>Honda</option>
+    <option>BWM</option>
+  </select>
+      </div>
+      <div class="form-group">
+        <label>Fecha de reserva:</label>
+        <my-date-picker name="mydate" [options]="myDatePickerOptions"
+                    [(ngModel)]="model" required></my-date-picker>
+      </div>
+
+      <div class="form-group">
+        <select class="form-control" id="sel1">
+          <option selected disabled>Meses de reserva</option>
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+    <option>4</option>
+    <option>5</option>
+    <option>6</option>
+    <option>7</option>
+    <option>8</option>
+    <option>9</option>
+    <option>10</option>
+    <option>11</option>
+    <option>12</option>
+  </select>
+      </div>
+      <div class="form-group">
+        <button class="btn btn-primary center-button" (click)="pasoUno=false;pasoDos=true;">Continuar</button>
+      </div>
+    </section>
+
+    <section *ngIf="pasoDos">
+      <label>Paso 2 de 3</label>
+      <h3>Datos de contacto</h3>
+      <br>
+      <div class="form-group" >
+        <input class="form-control" type="text" placeholder="Nombre">
+      </div>
+      <div class="form-group" >
+        <input class="form-control" type="text" placeholder="Apellido">
+      </div>
+      <div class="form-group" >
+        <input class="form-control" type="text" placeholder="Cedula">
+      </div>
+      <div class="form-group" >
+        <input class="form-control" type="text" placeholder="Celular">
+      </div>
+      <div class="button-group">
+        <button class="btn btn-primary" (click)="pasoDos=false;pasoUno=true;">Atras</button>
+        <button class="btn btn-primary" (click)="pasoDos=false;pasoTres=true;">Continuar</button>
+      </div>
+
+    </section>
+    <section *ngIf="pasoTres">
+      <label>Paso 3 de 3</label>
+      <h3>Datos de pago</h3>
+      <div class="form-group" >
+        <input class="form-control" type="text" placeholder="Nombre del titular de la tarjeta">
+      </div>
+      <div class="form-group" >
+        <input class="form-control" type="text" placeholder="Numero de tarjeta">
+      </div>
+      <div class="form-group" >
+          <input class="form-control" type="text" placeholder="Numero de tarjeta">
+      </div>
+      <div class="form-group" >
+        <input class="form-control" type="text" placeholder="Código de seguridad">
+      </div>
+      <div class="button-group">
+        <button class="btn btn-primary" (click)="pasoTres=false;pasoDos=true;">Atras</button>
+        <button class="btn btn-primary" routerLink="/" routerLinkActive="active">Registar</button>
+      </div>
+    </section>
+
+
+  </form>
+</div>

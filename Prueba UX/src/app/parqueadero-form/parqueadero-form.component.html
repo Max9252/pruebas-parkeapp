@@ -1,0 +1,158 @@
+<div class="container">
+  <h2>Registro de parqueadero</h2>
+  <br>
+  <form>
+    <section *ngIf="pasoUno">
+      <label>Paso 1 de 4</label>
+      <h3>Datos Personales</h3>
+      <div class="form-group">
+        <input class="form-control" type="text" placeholder="Nombre">
+      </div>
+      <div class="form-group">
+        <input class="form-control" type="text" placeholder="Apellido">
+      </div>
+      <div class="form-group">
+        <input class="form-control" type="text" placeholder="Correo electronico">
+      </div>
+      <div class="form-group">
+        <select class="form-control" id="sel1">
+          <option selected disabled>Seleccione una ciudad</option>
+
+    <option>Santiago de Cali</option>
+    <option>Bogota</option>
+    <option>Barranquilla</option>
+    <option>Medellin</option>
+  </select>
+      </div>
+
+      <div class="form-group">
+        <button class="btn btn-primary center-button" (click)="pasoUno=false;pasoDos=true;">Continuar</button>
+      </div>
+    </section>
+
+    <section *ngIf="pasoDos">
+      <label>Paso 2 de 4</label>
+      <h3>Datos del parqueadero</h3>
+      <br>
+      <div class="form-group">
+        <input type="text" [(ngModel)]="address" [options]='options' (setAddress)="getAddress($event)" (street_number)='street_number=$event' (street)='street=$event' (city)='city=$event' (state)='state=$event' (district)='district=$event' (country)='country=$event'
+          (postal_code)='postal_code=$event' (lat)='lat=$event' (lng)='lng=$event' (adr_address)='adr_address=$event' (name)='name=$event' (place_id)='place_id=$event' (types)='types=$event' (url)='url=$event' (utc_offset)='utc_offset=$event' (vicinity)='vicinity=$event'
+          (photos)='photos=$event' (airport)='airport=$event' (CountryCodes)='CountryCodes=$event' id="autocomplete"  class="form-control" [ngModelOptions]="{standalone: true}" placeholder="Dirección" ng2-google-place-autocomplete/>
+      </div>
+      <div class="form-group">
+        <input class="form-control" type="number" placeholder="Hora de entrada">
+      </div>
+      <div class="form-group">
+        <input class="form-control" type="number" placeholder="Hora de salida">
+      </div>
+      <div class="form-group">
+        <input class="form-control" type="text" placeholder="Nombre del edificio (Opcional)">
+      </div>
+      <div class="form-group">
+        <div class="col-md-12">
+          <angular2-multiselect [data]="dropdownList" [(ngModel)]="selectedItems" [ngModelOptions]="{standalone: true}" [settings]="dropdownSettings" (onSelect)="onItemSelect($event)" (onDeSelect)="OnItemDeSelect($event)"></angular2-multiselect>
+        </div>
+      </div>
+      <label>Imagenes del parqueadero</label>
+      <div class="form-group">
+        <ng2-file-input></ng2-file-input>
+
+      </div>
+      <div class="form-group">
+        <ng2-file-input></ng2-file-input>
+
+      </div>
+      <div class="form-group">
+        <ng2-file-input></ng2-file-input>
+
+      </div>
+      <div class="form-group">
+        <ng2-file-input></ng2-file-input>
+      </div>
+      <div class="form-group">
+        <textarea class="form-control" rows="3" placeholder="Descripción del parqueadero. Maximo 300 caracteres."></textarea>
+      </div>
+
+      <div class="button-group">
+        <button class="btn btn-primary" (click)="pasoDos=false;pasoUno=true;">Atras</button>
+        <button class="btn btn-primary" (click)="pasoDos=false;pasoTres=true;">Continuar</button>
+      </div>
+
+    </section>
+    <section *ngIf="pasoTres">
+      <label>Paso 3 de 4</label>
+      <h4>Información para automotoviles</h4>
+      <div class="form-group">
+        <input class="form-control" type="text" placeholder="Espacios disponibles">
+      </div>
+      <div class="form-group">
+        <input class="form-control" type="text" placeholder="Valor del tiempo">
+      </div>
+      <h4>Información para motocicletas</h4>
+      <div class="form-group">
+        <input class="form-control" type="text" placeholder="Espacios disponibles">
+      </div>
+      <div class="form-group">
+        <input class="form-control" type="text" placeholder="Valor del tiempo">
+      </div>
+      <h4>Información para bicicletas</h4>
+      <div class="form-group">
+        <input class="form-control" type="text" placeholder="Espacios disponibles">
+      </div>
+      <div class="form-group">
+        <input class="form-control" type="text" placeholder="Valor del tiempo">
+      </div>
+      <div class="button-group">
+        <button class="btn btn-primary" (click)="pasoTres=false;pasoDos=true;">Atras</button>
+        <button class="btn btn-primary" (click)="pasoTres=false;pasoCuatro=true;">Continuar</button>
+      </div>
+    </section>
+
+
+    <section *ngIf="pasoCuatro">
+      <label>Paso 4 de 4</label>
+      <h3>Datos bancarios</h3>
+      <br>
+      <div class="form-group">
+        <input class="form-control" type="text" placeholder="Nombre del titular">
+      </div>
+      <div class="form-group">
+        <input class="form-control" type="text" placeholder="Número de la cedula">
+      </div>
+      <div class="form-group">
+        <select (change)="onMetodoPagoChange($event.target)" class="form-control" id="sel1">
+        <option selected disabled>Seleccione un método de pago</option>
+      <option [value]="1">Transferencia Bancaria</option>
+      <option [value]="2">Giro nacional</option>
+      </select>
+      </div>
+      <div class="form-group" *ngIf="transferencia">
+        <input class="form-control" type="text" placeholder="Dirección del domicilio">
+      </div>
+      <div class="form-group" *ngIf="giro">
+        <select class="form-control" id="sel1">
+        <option selected disabled>Seleccione un tipo de cuenta</option>
+      <option>Ahorros</option>
+      <option>Corriente</option>
+      </select>
+      </div>
+      <div class="form-group" *ngIf="giro">
+        <input class="form-control" type="text" placeholder="Numero de la cuenta">
+      </div>
+      <div class="form-group">
+        <select class="form-control" id="sel1">
+        <option selected disabled>Seleccione una empresa</option>
+      <option>Efecty</option>
+      <option>Servientrega</option>
+      <option>Wester Union</option>
+      </select>
+      </div>
+      <div class="button-group">
+        <button class="btn btn-primary" (click)="pasoCuatro=false;pasoTres=true;">Atras</button>
+        <button class="btn btn-primary" routerLink="/" routerLinkActive="active">Registar</button>
+      </div>
+    </section>
+
+
+  </form>
+</div>
